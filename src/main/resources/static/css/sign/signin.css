@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+footer,
+header{
+    margin: 50px 0;
+}
+main>.wrap #signin-form ul>li{
+    margin-top: 10px;
+}
+main>.wrap #signin-form ul>li input{
+    width: 100%;
+    padding: 1em;
+}

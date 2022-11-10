@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    유저권한으로 접근하는 페이지입니다.
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        관리자 권한이 있는 경우 표현
+    </div>
+    <div sec:authorize="hasRole('ROLE_SELLER')">
+        SELLER 권한이 있는 경우 표현
+    </div>
+    <div sec:authorize="hasRole('ROLE_USER')">
+        USER 권한이 있는 경우 표현
+    </div>
+    <div sec:authentication="name"></div>
+    <div th:text="${#authentication.name}"></div>
+    <div th:text="${#authentication.principal.username}"></div>
+    <div th:text="${#authentication.principal.password}"></div>     <!--패스워드는삭제댐-->
+</body>
+</html>
